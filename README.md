@@ -29,5 +29,8 @@ Projects for JPDB
 <img width="1427" alt="Screenshot 2022-06-26 at 3 55 30 PM" src="https://user-images.githubusercontent.com/98510973/175809882-f9363eca-8113-4567-be20-4cac67d07ed3.png">
 <img width="1270" alt="Screenshot 2022-06-26 at 3 55 52 PM" src="https://user-images.githubusercontent.com/98510973/175809900-b6965db0-7e7e-49bd-9ad8-574f85c2c264.png">
 <img width="1348" alt="Screenshot 2022-06-26 at 3 56 27 PM" src="https://user-images.githubusercontent.com/98510973/175809917-dfe89824-ec59-4bca-bcee-20aff8833901.png"><img width="1259" alt="Screenshot 2022-06-26 at 3 56 47 PM" src="https://user-images.githubusercontent.com/98510973/175809927-3f76e050-6d59-4ef9-967c-effc75d715ea.png">
-<img width="1440" alt="Screenshot 2022-06-26 at 3 58 49 PM" src="https://user-images.githubusercontent.com/98510973/175809980-5c2eb4f3-e0c4-4227-a2ea-c8c0de65d77d.png">
+<img width="1256" alt="Screenshot 2022-06-26 at 4 26 00 PM" src="https://user-images.githubusercontent.com/98510973/175810898-9528bfb9-152e-46e2-8388-398c71752140.png">
+<img width="1440" alt="Screenshot 2022-06-26 at 4 26 14 PM" src="https://user-images.githubusercontent.com/98510973/175810912-779e5241-0602-4c7f-99dc-87c818b7febe.png">
+<img width="1264" alt="Screenshot 2022-06-26 at 4 26 34 PM" src="https://user-images.githubusercontent.com/98510973/175810933-e57be44a-21e4-47c5-b989-6cea7608877f.png">
+
 
