@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html lang="en">
+
+<head>
+    <title>Get</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Enter Employee Name To Fetch Details</h2>
+        <form id="empForm" method="post">
+            <div class="form-group">
+                <label for="empName">Employee Name:</label>
+                <input type="text" class="form-control" id="empName" placeholder="Enter Employee Name" name="empName">
+            </div>
+            <input type="button" class="btn btn-primary" id="empSave" value="Search" onclick="getEmployee();">
+            <input type="button" class="btn btn-primary" value="Home" onclick="location.href='InternShipProject.html'">
+        </form>
+    </div>
+    
+    <script>
+        function validateAndGetFormData() {
+            var empNameVar = $("#empName").val();
+            if (empNameVar === "") {
+                alert("Employee Name is a required value!");
+                $("#empName").focus();
+                return "";
+            }
+            var jsonStrObj = {
+                empName: empNameVar,
+            };
+            return JSON.stringify(jsonStrObj);
+        }
+
+        function resetForm() {
+            $("#empName").val("");
+            $("#empName").focus();
+        }
+
+        function executeCommand(reqString, dbBaseUrl, apiEndPointUrl) {
+            var url = dbBaseUrl + apiEndPointUrl;
+            var jsonObj;
+            $.post(url, reqString, function (result) {
+                jsonObj = JSON.parse(result);
+            }).fail(function (result) {
+                var dataJsonObj = result.responseText;
+                jsonObj = JSON.parse(dataJsonObj);
+            });
+            return jsonObj;
+        }
+
+        function createGETRequest(token, dbname, relationName, jsonObjStr) {
+            var value1 = "{\n"
+                + "\"token\" : \""
+                + token
+                + "\",\n" + "\"cmd\" : \"GET\",\n"
+                + "\"dbName\": \""
+                + dbname
+                + "\",\n"
+                + "\"rel\" : \""
+                + relationName
+                + "\",\n"
+                + "\"jsonStr\":\n"
+                + jsonObjStr
+                + "\n"
+                + "}";
+            return value1;
+        }
+
+        function getEmployee() {
+            var jsonStr = validateAndGetFormData();
+            if (jsonStr === "") {
+                return;
+            }
+            var getReqStr = createGETRequest("90939356|-31949287513580450|90939623",
+                "Employee", "EMP-REL", jsonStr);
+            alert(getReqStr);
+            jQuery.ajaxSetup({ async: false });
+            var resultObj = executeCommand(getReqStr,
+                "http://api.login2explore.com:5577", "/api/irl");
+            alert(JSON.stringify(resultObj));
+            jQuery.ajaxSetup({ async: true });
+            resetForm();
+        }        
+    </script>
+
+    
+</body>
+
+</html>
