@@ -78,11 +78,7 @@
             if (jsonStr === "") {
                 return;
             }
-
-
-
-
-            var removeReqStr = createREMOVERecordRequest("90935456|-31948798142885023|90931464", "Employee", "EMP-REL", parseInt(document.getElementById("index").value));
+            var removeReqStr = createREMOVERecordRequest("90939356|-31949287513580450|90939623", "Employee", "EMP-REL", parseInt(document.getElementById("index").value));
             alert(removeReqStr);
             jQuery.ajaxSetup({ async: false });
             var resultObj = executeCommand(removeReqStr,
